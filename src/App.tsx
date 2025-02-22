@@ -253,28 +253,6 @@ function App() {
               transition={{ duration: 2, ease: 'easeInOut' }}
               className="absolute inset-0 z-0 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 pointer-events-none"
             />
-            {/* Proposal Content */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{
-                type: 'spring',
-                stiffness: 260,
-                damping: 20,
-              }}
-              className="text-center backdrop-blur-xl bg-white/10 p-8 rounded-lg border border-white/20 shadow-xl relative z-10"
-            >
-              <h2 className="text-4xl font-serif text-white mb-8">
-                Will you be mine?
-              </h2>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-12 py-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full text-2xl font-bold shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 transition-all"
-              >
-                हाँ ♥️
-              </motion.button>
-            </motion.div>
           </>
         )}
       </section>
