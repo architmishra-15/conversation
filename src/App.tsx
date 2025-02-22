@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring, useInView } from 'framer-motion';
 import { Heart, Calendar } from 'lucide-react';
 import { Background } from './components/Background';
 import FullscreenPrompt from './components/FullscreenPrompt';
+import { TextGenerate } from './components/text-generate-effect';
 
 const memories = [
   {
@@ -156,7 +157,7 @@ function App() {
       const bottom = lastRect.top - containerRect.top + lastRect.height / 2;
       setLineDimensions({ top, height: bottom - top });
     }
-  }, [containerRef, firstItemRef, lastItemRef, memories.length]);
+  }, [containerRef, firstItemRef, lastItemRef]);
 
   return (
     <div
@@ -164,6 +165,7 @@ function App() {
       className="bg-transparent text-white h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth relative"
       style={{ scrollbarGutter: 'stable' }}
     >
+      
       {/* Ensure your Background component renders its canvas in a fixed, full-screen container with a negative z-index */}
       <FullscreenPrompt />
       <Background />
@@ -255,6 +257,12 @@ function App() {
             />
           </>
         )}
+      </section>
+      <section className="snap-center h-screen bg-black">
+        <div className="flex items-center justify-center h-full">
+
+          <TextGenerate />
+        </div>
       </section>
     </div>
   );
